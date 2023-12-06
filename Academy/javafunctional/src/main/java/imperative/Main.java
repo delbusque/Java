@@ -27,6 +27,15 @@ public class Main {
         for (Person girl: females) {
             System.out.println(girl);
         }
+
+        // Declarative approach
+        people.stream()
+                .filter(p->FEMALE.equals(p.gender))
+                .map(Person::getName)
+                .forEach(System.out::println);
+
+        List<Person> males = people.stream()
+                .collect
     }
 
     static class Person{
@@ -36,6 +45,10 @@ public class Main {
         Person(String name, Gender gender) {
             this.name = name;
             this.gender = gender;
+        }
+
+        public String getName(){
+            return this.name;
         }
 
         @Override
