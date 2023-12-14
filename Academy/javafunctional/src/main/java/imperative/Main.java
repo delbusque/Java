@@ -29,10 +29,11 @@ public class Main {
         }
 
         // Declarative approach
+
         people.stream()
                 .filter(p -> FEMALE.equals(p.gender))
-                .map(Person::getName)
-                .forEach(System.out::println);
+                .map(Person::getName) // method reference of .map(female -> female.getName())
+                .forEach(System.out::println); // method reference of .forEach(name -> System.out.println(name));
 
         Predicate<Person> malePredicate = person -> person.gender.equals(MALE);
 
