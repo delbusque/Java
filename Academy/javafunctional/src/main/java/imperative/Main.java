@@ -3,7 +3,6 @@ package imperative;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 import static imperative.Main.Gender.*;
 
@@ -15,27 +14,25 @@ public class Main {
                 new Person("Maria", FEMALE),
                 new Person("Aisha", FEMALE),
                 new Person("Alex", MALE),
-                new Person("Alice", FEMALE)
-        );
-        
+                new Person("Alice", FEMALE));
+
         List<Person> females = new ArrayList<>();
 
-        for (Person person: people) {
-            if(person.gender.equals(FEMALE)){
+        for (Person person : people) {
+            if (person.gender.equals(FEMALE)) {
                 females.add(person);
             }
         }
 
-        for (Person girl: females) {
+        for (Person girl : females) {
             System.out.println(girl);
         }
 
         // Declarative approach
         people.stream()
-                .filter(p->FEMALE.equals(p.gender))
+                .filter(p -> FEMALE.equals(p.gender))
                 .map(Person::getName)
                 .forEach(System.out::println);
-
 
         Predicate<Person> malePredicate = person -> person.gender.equals(MALE);
 
@@ -43,12 +40,12 @@ public class Main {
                 .filter(malePredicate)
                 .toList();
 
-        for (Person male: males) {
+        for (Person male : males) {
             System.out.println(male.toString());
         }
     }
 
-    static class Person{
+    static class Person {
         private final String name;
         private final Gender gender;
 
@@ -57,7 +54,7 @@ public class Main {
             this.gender = gender;
         }
 
-        public String getName(){
+        public String getName() {
             return this.name;
         }
 
@@ -70,7 +67,7 @@ public class Main {
         }
     }
 
-    enum Gender{
+    enum Gender {
         MALE, FEMALE
     }
 }
