@@ -10,7 +10,7 @@ public class _Predicate {
         System.out.println(isPhoneNumValid.and(contains3).test("+441234567"));
         System.out.println(isPhoneNumValid.or(contains3).test("+431234567"));
 
-        Boolean result = isIt.test(true, 190);
+        boolean result = isIt.test(true, 190);
         System.out.println("It is: " + result);
     }
 
