@@ -3,8 +3,6 @@ package streams;
 import static streams._Stream.Gender.MALE;
 import static streams._Stream.Gender.FEMALE;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
