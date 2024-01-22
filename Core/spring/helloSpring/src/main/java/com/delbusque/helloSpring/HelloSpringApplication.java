@@ -15,6 +15,8 @@ public class HelloSpringApplication {
 
 		System.out.println(context.getBean("person"));
 		System.out.println(context.getBean("person2"));
+		System.out.println(context.getBean("methodCallPerson"));
+		System.out.println(context.getBean("parameterPerson"));
 
 		System.out.println(context.getBean("homeAddress"));
 		// System.out.println(context.getBean(Address.class));

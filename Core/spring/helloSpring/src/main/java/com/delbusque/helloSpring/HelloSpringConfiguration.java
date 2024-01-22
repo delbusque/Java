@@ -9,6 +9,9 @@ record Person(String name, int age) {
 record Address(String street, String city) {
 }
 
+record ExtendedPerson(String name, int age, Address address) {
+}
+
 @Configuration
 public class HelloSpringConfiguration {
 
@@ -30,6 +33,16 @@ public class HelloSpringConfiguration {
     @Bean
     public Person person2() {
         return new Person(name(), age());
+    }
+
+    @Bean
+    public ExtendedPerson methodCallPerson() {
+        return new ExtendedPerson(name(), age(), new Address("The Promenade", "Southport"));
+    }
+
+    @Bean
+    public ExtendedPerson parameterPerson(String name, int age, Address homeAddress) {
+        return new ExtendedPerson(name, age, homeAddress);
     }
 
     @Bean(name = "homeAddress")
