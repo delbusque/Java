@@ -8,8 +8,16 @@ public class HelloSpringApplication {
 
 		var context = new AnnotationConfigApplicationContext(HelloSpringConfiguration.class);
 
-		Object output = context.getBean("name");
-		System.out.println(output);
+		Object name = context.getBean("name");
+
+		System.out.println(name);
+		System.out.println(context.getBean("age"));
+
+		System.out.println(context.getBean("person"));
+		System.out.println(context.getBean("person2"));
+
+		System.out.println(context.getBean("homeAddress"));
+		// System.out.println(context.getBean(Address.class));
 
 	}
 
