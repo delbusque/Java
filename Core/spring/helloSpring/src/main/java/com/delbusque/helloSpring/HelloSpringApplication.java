@@ -1,5 +1,7 @@
 package com.delbusque.helloSpring;
 
+import java.util.Arrays;
+
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class HelloSpringApplication {
@@ -16,10 +18,13 @@ public class HelloSpringApplication {
 		System.out.println(context.getBean("person"));
 		System.out.println(context.getBean("person2"));
 		System.out.println(context.getBean("methodCallPerson"));
-		System.out.println(context.getBean("parameterPerson"));
+		System.out.println(context.getBean("parametersPerson"));
 
-		System.out.println(context.getBean("homeAddress"));
-		// System.out.println(context.getBean(Address.class));
+		Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
+
+		System.out.println(context.getBean("workAddress"));
+		System.out.println(context.getBean("parametersQualifierPerson"));
+		System.out.println(context.getBean(Address.class));
 
 	}
 
