@@ -1,9 +1,9 @@
 package com.delbusque.learnSpring;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 @Component
-
+@Qualifier("MarioGameQualifier")
 public class MarioGame implements GamingConsole {
     @Override
     public void up() {
