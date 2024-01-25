@@ -15,6 +15,14 @@ class MyBusinessClass {
     @Autowired
     Dependency2 dependency2;
 
+    public void setDependency1(Dependency1 dependency1) {
+        this.dependency1 = dependency1;
+    }
+
+    public void setDependency2(Dependency2 dependency2) {
+        this.dependency2 = dependency2;
+    }
+
     public String toString() {
         return "Using " + dependency1 + " and " + dependency2;
     }
